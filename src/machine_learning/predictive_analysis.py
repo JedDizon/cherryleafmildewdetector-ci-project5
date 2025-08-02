@@ -53,7 +53,7 @@ def load_model_and_predict(my_image, version):
     """
     Live image ML prediction
     """
-
+    version = "v2" # temporarily hardcoded. Bug. Can't find model path
     model = load_model(f"outputs/{version}/powdery_mildew_model.h5")
 
     pred_proba = model.predict(my_image)[0, 0]
