@@ -56,5 +56,5 @@ def p1_project_summary_body():
         f"* The dataset provided contains a total of 4208 images composed of "
         f"healthy and affected leaves.\n"
         f"* The dataset is available for download on "
-        f"[Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves)")
+        f"[Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves).")
 
