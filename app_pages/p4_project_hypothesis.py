@@ -45,7 +45,7 @@ def p4_project_hypothesis_body():
 
     st.success(
         f"**Validation 3**\n\n"
-        f"Model performance shows differences with can be observed"
+        f"Model performance shows differences with can be observed "
         f"in the form of visible white spot/streak patterns.\n"
         f"Average images also reveal a color difference where infected leaves "
         f"appear as a lighter shade of green compared to healthy ones."
