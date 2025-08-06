@@ -33,6 +33,10 @@ def p5_model_performance_body():
         f"evaluation of the model’s ability to generalize to new, unseen data."
     )
 
+    distribute_label = plt.imread(f"outputs/{version}/sets_distribution_pie.png")
+    st.image(distribute_label,
+             caption='Pie chart of Distribution of Train, Validation and Test Sets')
+
     st.write("---")
 
     st.write("### Model History")
@@ -59,7 +63,7 @@ def p5_model_performance_body():
 
     st.write("---")
 
-    st.write("### Generalised Performance on Test Set")
+    st.write("### Performance on Test Set")
     st.dataframe(pd.DataFrame(load_test_evaluation(version),
                  index=['Loss', 'Accuracy']))
     st.info(
