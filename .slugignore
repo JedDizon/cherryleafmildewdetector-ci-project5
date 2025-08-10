@@ -1,3 +1,8 @@
 /inputs
 /jupyter_notebooks
-/app_pages/__pycache__
+/app_pages/__pycache__/
+
+/outputs/v1/image_shape.pkl
+/outputs/v2/class_indices.pkl
+/outputs/v2/evaluation.pkl
+
