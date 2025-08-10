@@ -1,10 +1,10 @@
-# Detection of mildew on cherry leaves
+# Detection of Mildew on Cherry leaves
 
 ![Responsive image](/assets/images/dashboard_responsivity.png)
 
 ## Table of Contents
 
-- [Detection of mildew on cherry leaves](#detection-of-mildew-on-cherry-leaves)
+- [Detection of Mildew on Cherry leaves](#detection-of-mildew-on-cherry-leaves)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Dataset Content](#dataset-content)
@@ -30,10 +30,14 @@ Mildew Detector is a data science and machine learning (ML) initiative focused o
 Currently, tree inspections are carried out manually to identify signs of infection which is both time-consuming and labor-intensive. To streamline this process, we propose the development of a machine learning model capable of analyzing leaf images to detect the presence of mildew. This solution aims to significantly reduce the time required for diagnosis, enabling faster and more accurate treatment of affected trees.
 The project is deployed via Streamlit. The dashboard can be accessed [here]
 
+[Back to top](#table-of-contents)
+
 ## Dataset Content
 
 The dataset consists of 4,208 images of individual cherry leaves. The images were collected from Farmy & Foods’ own cherry crop fields and are labeled as Healthy or Infected with powdery mildew.
 While powdery mildew is common across various crops, the client is especially concerned about its impact on cherry plantations.The dataset was originally published on [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves) and curated for this project.
+
+[Back to top](#table-of-contents)
 
 ## Business Requirements
 
@@ -58,6 +62,8 @@ The primary business requirements for this project are:
     - Visual Analysis: Enable the client to visually compare and distinguish between healthy and infected cherry leaves using an interactive interface or dashboard.
     - ML-Based Prediction: Develop a system that can predict if a cherry leaf is healthy or infected with powdery mildew based on an image input.
 
+[Back to top](#table-of-contents)
+
 ## Hypotheses and validation
 
 | Hypothesis                 |          Validation                       |
@@ -66,6 +72,8 @@ The primary business requirements for this project are:
 | Resizing images to a smaller fixed resolution (e.g., 50×50) retains enough visual detail for accurate classification. |          Using smaller image sizes reduces computational cost while preserving key features. The original dataset images are 256x256 pixels, but training with this resolution typically results in a model larger than 100MB—exceeding GitHub’s standard file size limit. Git LFS was avoided by using smaller input dimensions (160x160). This approach maintains performance while keeping the model under the 100MB threshold.                       |
 | Average and variability images for each class (healthy vs. infected) will show distinct patterns.|          Model performance shows differences with can be observed in the form of visible white spot/streak patterns. Average images also reveal a color difference where infected leaves appear as a lighter shade of green compared to healthy ones.|
 | Using an ML model will reduce manual inspection time by over 90% per tree. | The mildew detector application allows for a near instantaneous prediction of the precense of mildew on a cherry leaf. |
+
+[Back to top](#table-of-contents)
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
@@ -100,6 +108,8 @@ This requirement can be mapped to the tasks from the following [User Stories](ht
 - User Story - Mildew detector
   - As a non-technical user, I can upload an image of a leaf into the model and receive a prediction if it contains powdery mildew or not (Business requirements 2).
   - On the Mildew Detector page the user can upload images of the leaves. They are run through the model which can predict if the leaves are healthy or are infected with mildew.
+
+[Back to top](#table-of-contents)
 
 ## ML business case
 
@@ -137,82 +147,95 @@ If successful, the ML model will:
 
 - Serve as a proof of concept for similar models across other crops and diseases
 
+[Back to top](#table-of-contents)
+
 ## Dashboard Design
 
-Page 1: Project Summary 
-General information
-Powdery mildew is a common fungal disease affecting a wide range of plant species. It is caused by various species of ascomycete fungi and thrives in environments with moderate temperatures and high humidity. In cherry trees, the disease is specifically caused by Podosphaera clandestina, a parasitic fungus that significantly impacts both leaf and fruit quality.
-The disease manifests as distinctive white, powder-like spots that typically appear on the upper surface of leaves and stems. In the early stages, light-green, circular lesions may form on either side of the leaf. These lesions can develop into a cotton-like fungal growth, especially on newer foliage and, in severe cases, on the fruit itself.
-This results in:
-Slowed plant growth
-Reduced fruit yield
-Compromised product quality
-The client, Farmy & Foods, is currently facing a widespread outbreak across several of its cherry tree plantations. The existing method of disease detection involves manual leaf inspection, which is labor-intensive and time-consuming, with each tree taking approximately 30 minutes to assess.
-To address this challenge, the client has commissioned the development of a Machine Learning (ML) solution capable of automatically detecting signs of powdery mildew from leaf images. The goal is to streamline the inspection process and improve early detection, enabling faster treatment and minimizing crop loss.
-Link to README
-For additional information, please see the Project README (https://github.com/JedDizon/cherryleafmildewdetector-ci-project5#readme) file.
-Business requirements
-The project has two Business Requirements:
-1 - Enable the client to visually compare and distinguish between healthy and infected cherry leaves using an interactive interface or dashboard.
-2 - Develop a system that can predict if a cherry leaf is healthy or infected with powdery mildew based on an image input.
-Dataset info
-The dataset provided contains a total of 4208 images composed of healthy and affected leaves.
-The dataset is available for download on Kaggle (https://www.kaggle.com/codeinstitute/cherry-leaves)
+Page 1: Project Summary
+
+- General information
+  - Powdery mildew is a common fungal disease affecting a wide range of plant species. It is caused by various species of ascomycete fungi and thrives in environments with moderate temperatures and high humidity. In cherry trees, the disease is specifically caused by Podosphaera clandestina, a parasitic fungus that significantly impacts both leaf and fruit quality.
+  - The disease manifests as distinctive white, powder-like spots that typically appear on the upper surface of leaves and stems. In the early stages, light-green, circular lesions may form on either side of the leaf. These lesions can develop into a cotton-like fungal growth, especially on newer foliage and, in severe cases, on the fruit itself.
+  - This results in:
+    - Slowed plant growth
+    - Reduced fruit yield
+    - Compromised product quality
+
+  - The client, Farmy & Foods, is currently facing a widespread outbreak across several of its cherry tree plantations. The existing method of disease detection involves manual leaf inspection, which is labor-intensive and time-consuming, with each tree taking approximately 30 minutes to assess.
+  - To address this challenge, the client has commissioned the development of a Machine Learning (ML) solution capable of automatically detecting signs of powdery mildew from leaf images. The goal is to streamline the inspection process and improve early detection, enabling faster treatment and minimizing crop loss.
+
+- Link to README
+  - For additional information, please see the Project [README](https://github.com/JedDizon/cherryleafmildewdetector-ci-project5#readme) file.
+
+- Business requirements
+  - The project has two Business Requirements:
+    - 1: Enable the client to visually compare and distinguish between healthy and infected cherry leaves using an interactive interface or dashboard.
+    - 2: Develop a system that can predict if a cherry leaf is healthy or infected with powdery mildew based on an image input.
+
+- Dataset info
+  - The dataset provided contains a total of 4208 images composed of healthy and affected leaves.
+  - The dataset is available for download on [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves).
 
 Page 2: Visual Studies
-Business requirement #1
-The client aims to visually distinguish between healthy cherry leaves and those affected by powdery mildew (Business Requirement 1).
-This page showcases the investigation of the visual studies done to answer this requirement.
-Avg & variability image differences
-The variability images clearly highlight the distinguishing features between healthy and diseased leaves.
-The presence of powdery mildew creates visible white spot/streak patterns on infected leaves.
-Additionally, the average images reveal a color difference where infected leaves appear as a lighter shade of green compared to healthy ones.
-Average healthy vs infected leaves differences images
-Image montage
+
+- Business requirement #1
+  - The client aims to visually distinguish between healthy cherry leaves and those affected by powdery mildew (Business Requirement 1).
+  - This page showcases the investigation of the visual studies done to answer this requirement.
+    - Avg & variability image differences
+      - The variability images clearly highlight the distinguishing features between healthy and diseased leaves.
+      - The presence of powdery mildew creates visible white spot/streak patterns on infected leaves.
+      - Additionally, the average images reveal a color difference where infected leaves appear as a lighter shade of green compared to healthy ones.
+  - Average healthy vs infected leaves differences images
+  - Image montage
 
 Page 3: Mildew Detector
-Business requirement #2
-This page answers Business Requirement 2. 
-Mildew detector
-The client asks for an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew.
-Link to download set of leaves for prediction
-A set of healthy and infected leaves for live prediction can be downloaded here (https://www.kaggle.com/datasets/codeinstitute/cherry-leaves)
-File uploader widget (Drag & drop)
-Table with the image name and prediction results & download button
 
-Page 4: Project Hypothesis	
-Project hypothesis & validation
-See [Hypotheses and validation](#hypotheses) section.
+- Business requirement #2
+- This page answers Business Requirement 2.
+  - Mildew detector
+    - The client asks for an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew.
+  - Link to download set of leaves for prediction
+    - A set of healthy and infected leaves for live prediction can be downloaded on [Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves).
+  - File uploader widget (Drag & drop)
+  - Table with the image name and prediction results & download button
+
+Page 4: Project Hypothesis
+
+- Project hypothesis & validation
+  - See [Hypotheses and validation](#hypotheses-and-validation) section.
 
 Page 5: Model performance
-Model Performance Metrics
-Dataset Splitting Overview
-The dataset was divided into three subsets: training, validation, and test.
-This is a common strategy in machine learning for building and evaluating models.
-Training set: The largest portion of the data, used to teach the model to distinguish between the image classes. A larger training set helps the model learn more effectively.
-Validation set: Used during model development to fine-tune parameters and improve performance without biasing the model to the test data.
-Test set: Held back until the very end to provide an unbiased evaluation of the model’s ability to generalize to new, unseen data.
-Model history
-The graphs above indicate that the model achieved a consistently high level of accuracy.
-Performance on the training set improved rapidly during the initial epochs. Although there was a brief dip in accuracy at epoch 4, the model quickly recovered in the following epoch and continued to improve steadily.
-The loss graph, which measures how far the model’s predictions deviate from the actual values, also reflects strong performance on both the training and validation sets.
-Performance on Test Set
-It was requested by the client at the beginning (SPELT WRONG of this project for an ML model with a performance criteria that could predict with at least 97% accuracy if a leaf was healthy or infected with powdery mildew.
-In the above table, the model predicts with a 99% accuracy on the status of images in the test dataset. 
-Project Conclusions
-Business Requirement 1 - conduct a study to visually compare and distinguish between healthy and infected cherry leaves. 
-Satisfied.
-See Page 2 (Visual Studies). Average image of healthy vs infected leaves. Main differences are visible white spot/streak patterns on infected leaves & infected leaves appearing as a lighter shade of green compared to healthy ones.
-Business Requirement 2 - predicting if a cherry leaf is healthy or infected with powdery mildew based on an image input.
-Satisfied.
-See Page 3 (Mildew Detector). Users can upload cherry leaf image(s) and receive a prediction with 99% accuracy if it is healthy or infected with powdery mildew.
+
+- Model Performance Metrics
+  - Dataset Splitting Overview
+    - The dataset was divided into three subsets: training, validation, and test.
+    - This is a common strategy in machine learning for building and evaluating models.
+    - Training set: The largest portion of the data, used to teach the model to distinguish between the image classes. A larger training set helps the model learn more effectively.
+    - Validation set: Used during model development to fine-tune parameters and improve performance without biasing the model to the test data.
+    - Test set: Held back until the very end to provide an unbiased evaluation of the model’s ability to generalize to new, unseen data.
+  - Model history
+    - The graphs above indicate that the model achieved a consistently high level of accuracy.
+    - Performance on the training set improved rapidly during the initial epochs. Although there was a brief dip in accuracy at epoch 4, the model quickly recovered in the following epoch and continued to improve steadily.
+    - The loss graph, which measures how far the model’s predictions deviate from the actual values, also reflects strong performance on both the training and validation sets.
+  - Performance on Test Set
+    - It was requested by the client at the beginning of this project for an ML model with a performance criteria that could predict with at least 97% accuracy if a leaf was healthy or infected with powdery mildew.
+    - In the above table, the model predicts with a 99% accuracy on the status of images in the test dataset.
+  - Project Conclusions
+    - Business Requirement 1 - conduct a study to visually compare and distinguish between healthy and infected cherry leaves.
+      - Satisfied. See Page 2 (Visual Studies). Average image of healthy vs infected leaves. Main differences are visible white spot/streak patterns on infected leaves & infected leaves appearing as a lighter shade of green compared to healthy ones.
+    - Business Requirement 2 - predicting if a cherry leaf is healthy or infected with powdery mildew based on an image input.
+      - Satisfied. See Page 3 (Mildew Detector). Users can upload cherry leaf image(s) and receive a prediction with 99% accuracy if it is healthy or infected with powdery mildew.
+
+[Back to top](#table-of-contents)
 
 ## Unfixed Bugs
 
-src/Predictive analysis: 
+src/Predictive analysis:
 def load_model_and_predict(my_image, version):
     model = load_model(f"outputs/v2/powdery_mildew_model.h5")
 model = load_model(f"outputs/{version}/powdery_mildew_model.h5")
+
+[Back to top](#table-of-contents)
 
 ## Deployment
 
@@ -227,6 +250,7 @@ model = load_model(f"outputs/{version}/powdery_mildew_model.h5")
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large, then add large files not required for the app to the .slugignore file.
 
+[Back to top](#table-of-contents)
 
 ## Main Data Analysis and Machine Learning Libraries
 
@@ -243,6 +267,8 @@ scikit-learn 1.3.1 - used for model evaluation
 tensorflow-cpu 2.16.1 - used for model creation
 keras 3.0.0 - used for setting up model hyperparameters
 
+[Back to top](#table-of-contents)
+
 ## Other technologies used
 
 Heroku: Project deployment
@@ -253,27 +279,36 @@ Kaggle: Download dataset
 
 Am I responsive - used to produce screenshot of the project.
 
+[Back to top](#table-of-contents)
+
 ## Issues
 
+[Back to top](#table-of-contents)
 
 ## Testing
-    1. [Manual Testing](#manual-testing)
-    2. [Python Validation](#python-validation)
 
-##  Credits
-    1. [Content](#content)
-Streamlit doc (https://docs.streamlit.io/develop/api-reference )
-	Streamlit commands (https://github.com/Code-Institute-Solutions/streamlit-lesson/blob/main/1_commands_and_widgets.py )
-	Multipageapp: https://github.com/Code-Institute-Solutions/streamlit-calculator 
-https://github.com/jfpaliga/CVD-predictor
-https://github.com/Code-Institute-Solutions/milestone-project-mildew-detection-in-cherry-leaves 
+[Back to top](#table-of-contents)
 
+## Credits
 
-    2. [Media](#media)
-emojis/icons: https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/ 
+- Content
+  1. [Streamlit doc](https://docs.streamlit.io/develop/api-reference)
+  2. [Streamlit commands](https://github.com/Code-Institute-Solutions/streamlit-lesson/blob/main/1_commands_and_widgets.py )
+  3. [Multipageapp](https://github.com/Code-Institute-Solutions/streamlit-calculator)
+  4. [CVD Predictor](https://github.com/jfpaliga/CVD-predictor)
+  5. [Mildew Detection](https://github.com/Code-Institute-Solutions/milestone-project-mildew-detection-in-cherry-leaves)
+  6. [Cherry Picker](https://github.com/HughKeenan/CherryPicker)
+
+- Media
+  1. emojis/icons:
+     1. [Streamlit Emojis](https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/)
+
+[Back to top](#table-of-contents)
 
 ## Acknowledgements
-Code Institute
-Mo Shami (Mentor)
 
+- Code Institute
 
+- Mo Shami (Mentor)
+
+[Back to top](#table-of-contents)
