@@ -1,5 +1,7 @@
 /inputs
 /jupyter_notebooks
+./jupyter_notebooks/data_visualization.ipynb
+./jupyter_notebooks/modelling_evaluation.ipynb
 /app_pages/__pycache__/
 
 /outputs/v1/image_shape.pkl
