@@ -67,7 +67,7 @@ def p5_model_performance_body():
     st.dataframe(pd.DataFrame(load_test_evaluation(version),
                  index=['Loss', 'Accuracy']))
     st.info(
-        f"* It was requested by the client at the beginnning of this project "
+        f"* It was requested by the client at the beginning of this project "
         f"for an ML model with a performance criteria that could predict"
         f" with at least 97% accuracy if a leaf was healthy "
         f"or infected with powdery mildew.\n"
