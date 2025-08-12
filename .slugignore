@@ -1,10 +1,14 @@
 /inputs
+inputs/cherryleaves_dataset/cherry-leaves/test/healthy/*
+inputs/cherryleaves_dataset/cherry-leaves/test/powdery_mildew/*
+inputs/cherryleaves_dataset/cherry-leaves/train/healthy/*
+inputs/cherryleaves_dataset/cherry-leaves/train/powdery_mildew/*
+
 /jupyter_notebooks
 ./jupyter_notebooks/data_visualization.ipynb
 ./jupyter_notebooks/modelling_evaluation.ipynb
-/app_pages/__pycache__/
+app_pages/__pycache__/*
 
-/outputs/v1/image_shape.pkl
-/outputs/v2/class_indices.pkl
-/outputs/v2/evaluation.pkl
+README.md
+kaggle.json
 
