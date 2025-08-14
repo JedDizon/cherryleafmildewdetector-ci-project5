@@ -3,12 +3,14 @@ from PIL import Image
 import numpy as np
 import pandas as pd
 
+
 from src.data_management import download_dataframe_as_csv
 from src.machine_learning.predictive_analysis import (
                                                     load_model_and_predict,
                                                     resize_input_image,
                                                     predictions_probabilities
                                                     )
+
 
 def p3_mildew_detector_body():
     """
@@ -60,4 +62,3 @@ def p3_mildew_detector_body():
             st.table(df_report)
             st.markdown(download_dataframe_as_csv(df_report),
                         unsafe_allow_html=True)
-

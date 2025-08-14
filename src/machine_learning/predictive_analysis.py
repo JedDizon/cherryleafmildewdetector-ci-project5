@@ -53,12 +53,13 @@ def load_model_and_predict(my_image, version):
     """
     Live image ML prediction
     """
-    version = "v2" # temporarily hardcoded. Bug. Can't find model path
+    version = "v2"
     model = load_model(f"outputs/{version}/powdery_mildew_model.h5")
 
     pred_proba = model.predict(my_image)[0, 0]
 
-    target_map = {v: k for k, v in {'contains Powdery Mildew': 0, 'is Healthy': 1}.items()}
+    target_map = {v: k for k, v in {
+        'contains Powdery Mildew': 0, 'is Healthy': 1}.items()}
     pred_class = target_map[pred_proba > 0.5]
     if pred_class == target_map[0]:
         pred_proba = 1 - pred_proba

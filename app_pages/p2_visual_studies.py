@@ -8,6 +8,7 @@ from matplotlib.image import imread
 import itertools
 import random
 
+
 def p2_visual_studies_body():
     st.write("### Visual Studies")
     st.info(
@@ -16,8 +17,6 @@ def p2_visual_studies_body():
       f"by powdery mildew (Business Requirement 1).\n"
       f"* This page showcases the investigation of the visual studies "
       f"done to answer this requirement.")
-      
-    
 
     version = 'v1'
     if st.checkbox("Average and Variability Image Differences"):
@@ -40,7 +39,6 @@ def p2_visual_studies_body():
           f"difference where infected leaves appear as a lighter shade of "
           f"green compared to healthy ones."
           )
-          
 
         st.write("---")
 
@@ -50,10 +48,10 @@ def p2_visual_studies_body():
         st.warning(
           f"* This study shows the slight pattern differences between "
           f"healthy and infected leaves, allowing them to be distinguished.")
-        
+
         st.image(diff_between_avgs,
                  caption='Difference between average images')
-        
+
         st.write("---")
 
     if st.checkbox("Image Montage"):

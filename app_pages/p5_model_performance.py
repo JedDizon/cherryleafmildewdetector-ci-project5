@@ -7,7 +7,7 @@ from src.machine_learning.evaluate_clf import load_test_evaluation
 
 def p5_model_performance_body():
     """
-    Display model performance Metrics 
+    Display model performance Metrics
     text and images
     """
     version = 'v2'
@@ -28,14 +28,18 @@ def p5_model_performance_body():
         f"used to teach the model to distinguish between the image classes. "
         f"A larger training set helps the model learn more effectively.\n\n"
         f"* **Validation set**: Used during model development to fine-tune "
-        f"parameters and improve performance without biasing the model to the test data.\n\n"
+        f"parameters and improve performance without biasing the model to "
+        f"the test data.\n\n"
         f"* **Test set**: Held back until the very end to provide an unbiased "
         f"evaluation of the model’s ability to generalize to new, unseen data."
     )
 
-    distribute_label = plt.imread(f"outputs/{version}/sets_distribution_pie.png")
-    st.image(distribute_label,
-             caption='Pie chart of Distribution of Train, Validation and Test Sets')
+    distribute_label = plt.imread(
+        f"outputs/{version}/sets_distribution_pie.png")
+    st.image(
+        distribute_label,
+        caption="Pie chart of Distribution of Train, Validation and Test Sets"
+    )
 
     st.write("---")
 
@@ -58,7 +62,27 @@ def p5_model_performance_body():
         f"epoch and continued to improve steadily.\n"
         f"* The loss graph, which measures how far the model’s predictions "
         f"deviate from the actual values, also reflects strong performance"
-        f" on both the training and validation sets. " 
+        f" on both the training and validation sets."
+    )
+
+    st.write("---")
+
+    st.write("### Machine Learning Pipeline Overview")
+    st.warning(
+        f"The machine learning pipeline for this project followed "
+        f"the below steps:\n\n"
+        f"**1. Data Preprocessing**: Images were preprocessed to ensure "
+        f"consistent input size, enhanced for clarity, and normalized to "
+        f"standardize pixel values.\n\n"
+        f"**2. Model Training**: A CNN classified cherry leaves as "
+        f"'healthy' or 'infected'.\n\n"
+        f"**3. Model Evaluation**: The model was evaluated on the test set for"
+        f" an unbiased assessment of its ability to analyze new data.\n\n"
+        f"**4. Optimization**: The model was iteratively refined, achieving "
+        f"99% accuracy on the test set.\n\n"
+        f"This pipeline allows for reproducibility and scalability, "
+        f"ensuring the model can be used for future predictions "
+        f"or improvements."
     )
 
     st.write("---")
@@ -74,5 +98,25 @@ def p5_model_performance_body():
         f"* In the above table, the model predicts "
         f"with a **99%** accuracy on the status of"
         f" images in the test dataset. "
-        f"The requirement can be considered **satisfied.**"
+    )
+
+    st.write("### Project Conclusions")
+
+    st.success(
+        f"**Business Requirement 1**: conduct a study to visually compare "
+        f"and distinguish between healthy and infected cherry leaves.\n\n"
+        f"* Requirement satisfied.\n"
+        f"* See Page 2 (Visual Studies). Average image of healthy vs infected "
+        f"leaves. Main differences are visible white spot/streak patterns "
+        f"on infected leaves & infected leaves appearing as a lighter "
+        f"shade of green compared to healthy ones."
+    )
+
+    st.success(
+        f"**Business Requirement 2**: predicting if a cherry leaf is healthy "
+        f"or infected with powdery mildew based on an image input.\n\n"
+        f"* Requirement satisfied.\n"
+        f"* See Page 3 (Mildew Detector). ML Model allows users can upload "
+        f"cherry leaf  image(s) and receive a prediction with 99% "
+        f"accuracy if it is healthy or infected with powdery mildew."
     )

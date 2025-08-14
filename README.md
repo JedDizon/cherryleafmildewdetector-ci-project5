@@ -219,6 +219,19 @@ Page 5: Model performance
   - Performance on Test Set
     - It was requested by the client at the beginning of this project for an ML model with a performance criteria that could predict with at least 97% accuracy if a leaf was healthy or infected with powdery mildew.
     - In the above table, the model predicts with a 99% accuracy on the status of images in the test dataset.
+  - Machine Learning Pipeline Overview
+    - The machine learning pipeline for this project followed the below steps:
+
+    1. Data Preprocessing: Images were preprocessed to ensure consistent input size, enhanced for clarity, and normalized to standardize pixel values.
+
+    2. Model Training: A CNN classified cherry leaves as 'healthy' or 'infected'.
+
+    3. Model Evaluation: The model was evaluated on the test set for an unbiased assessment of its ability to analyze new data.
+
+    4. Optimization: The model was iteratively refined, achieving 99% accuracy on the test set.
+
+    - This pipeline allows for reproducibility and scalability, ensuring the model can be used for future predictions or improvements.
+
   - Project Conclusions
     - Business Requirement 1 - conduct a study to visually compare and distinguish between healthy and infected cherry leaves.
       - Satisfied. See Page 2 (Visual Studies). Average image of healthy vs infected leaves. Main differences are visible white spot/streak patterns on infected leaves & infected leaves appearing as a lighter shade of green compared to healthy ones.
@@ -335,46 +348,44 @@ Deploying on Heroku: During deployment, the application exceeded the size limit 
 
 [CI Python Linter](https://pep8ci.herokuapp.com) was used to test code for PEP8 compliance.
 
-
 <hr><summary>app_pages</summary><hr>
 
 <details><summary>multipage.py</summary>
-<img src="docs/pep8/pep8_about_admin.png">
+<img src="assets/images/p5_multipage.png">
 </details>
 
 <details><summary>p1_project_summary.py</summary>
-<img src="docs/pep8/pep8_about_admin.png">
+<img src="assets/images/p5_projectsummary.png">
 </details>
 
 <details><summary>p2_visual_studies.py</summary>
-<img src="docs/pep8/pep8_about_admin.png">
+<img src="assets/images/p5_visualstudies.png">
 </details>
 
 <details><summary>p3_mildew_detector.py</summary>
-<img src="docs/pep8/pep8_about_admin.png">
+<img src="assets/images/p5_mildewdetector.png">
 </details>
 
 <details><summary>p4_project_hypothesis.py</summary>
-<img src="docs/pep8/pep8_about_admin.png">
+<img src="assets/images/p5_projecthypothesis.png">
 </details>
 
 <details><summary>p5_model_performance.py</summary>
-<img src="docs/pep8/pep8_about_admin.png">
+<img src="assets/images/p5_modelperformance.png">
 </details>
-
 
 <hr><summary>src</summary><hr>
 
 <details><summary>data_management.py</summary>
-<img src="docs/pep8/pep8_blog_admin.png">
+<img src="assets/images/p5_datamanagement.png">
 </details>
 
 <details><summary>evaluate_clf.py</summary>
-<img src="docs/pep8/pep8_blog_models.png">
+<img src="assets/images/p5_evaluateclf.png">
 </details>
 
 <details><summary>predictive_analysis.py</summary>
-<img src="docs/pep8/pep8_blog_urls.png">
+<img src="assets/images/p5_predictiveanalysis.png">
 </details>
 
 [Back to top](#table-of-contents)

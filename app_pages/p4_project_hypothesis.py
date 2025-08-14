@@ -26,10 +26,11 @@ def p4_project_hypothesis_body():
 
     st.success(
         f"**Validation 2**\n\n"
-        f"Using smaller image sizes reduces computational cost while preserving "
-        f"key features. The original dataset images are 256x256 pixels, but "
-        f"training with this resolution typically results in a model larger "
-        f"than 100MB—exceeding GitHub’s standard file size limit.\n\n"
+        f"Using smaller image sizes reduces computational cost "
+        f"while preserving key features. The original dataset "
+        f"images are 256x256 pixels, but training with this resolution "
+        f"typically results in a model larger than 100MB—exceeding "
+        f"GitHub’s standard file size limit.\n\n"
         f"Git LFS was avoided by using smaller input dimensions (160x160). "
         f"This approach maintains performance while keeping the model under "
         f"the 100MB threshold."
