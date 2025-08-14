@@ -1,6 +1,6 @@
 # Detection of Mildew on Cherry leaves
 
-![Responsive image](/assets/images/dashboard_responsivity.png)
+![Responsive image of site](/assets/images/p5_multimockup.png)
 
 ## Table of Contents
 
@@ -15,12 +15,14 @@
     - [Requirement 2](#requirement-2)
   - [ML business case](#ml-business-case)
   - [Dashboard Design](#dashboard-design)
-  - [Unfixed Bugs](#unfixed-bugs)
   - [Deployment](#deployment)
   - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
   - [Other technologies used](#other-technologies-used)
   - [Issues](#issues)
   - [Testing](#testing)
+    - [Manual Testing](#manual-testing)
+  - [Validation](#validation)
+    - [PEP8 Validation](#pep8-validation)
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
 
@@ -28,7 +30,8 @@
 
 Mildew Detector is a data science and machine learning (ML) initiative focused on using predictive analytics. The project supports Farmy & Foods, an agricultural company specializing in the cultivation and harvesting of various food products, which is currently facing an outbreak of powdery mildew in its cherry orchards.
 Currently, tree inspections are carried out manually to identify signs of infection which is both time-consuming and labor-intensive. To streamline this process, we propose the development of a machine learning model capable of analyzing leaf images to detect the presence of mildew. This solution aims to significantly reduce the time required for diagnosis, enabling faster and more accurate treatment of affected trees.
-The project is deployed via Streamlit. The dashboard can be accessed [here]
+
+The [project](https://mildew-detector-p5-ci-c8b938269593.herokuapp.com/) is deployed via Streamlit.
 
 [Back to top](#table-of-contents)
 
@@ -51,16 +54,16 @@ Approximately 30 minutes per tree for inspection
 
 1 minute per tree for treatment if infected
 Given the scale of their operations, the process is highly time-consuming and not scalable. The IT department at Farmy & Foods has proposed the development of a machine learning system capable of instantly identifying powdery mildew from an image of a cherry leaf. This solution aims to:
-    - Reduce inspection time
-    - Scale across thousands of trees
-    - Enable faster intervention and treatment
-    - Lay the groundwork for similar ML-based solutions across other crops
 
-The dataset used in this project consists of real cherry leaf images captured from Farmy & Foods’ plantations.
+- Reduce inspection time
+- Scale across thousands of trees
+- Enable faster intervention and treatment
+- Lay the groundwork for similar ML-based solutions across other crops
 
-The primary business requirements for this project are:
-    - Visual Analysis: Enable the client to visually compare and distinguish between healthy and infected cherry leaves using an interactive interface or dashboard.
-    - ML-Based Prediction: Develop a system that can predict if a cherry leaf is healthy or infected with powdery mildew based on an image input.
+The dataset used in this project consists of real cherry leaf images captured from Farmy & Foods’ plantations. The primary business requirements for this project are:
+
+- Visual Analysis: Enable the client to visually compare and distinguish between healthy and infected cherry leaves using an interactive interface or dashboard.
+- ML-Based Prediction: Develop a system that can predict if a cherry leaf is healthy or infected with powdery mildew based on an image input.
 
 [Back to top](#table-of-contents)
 
@@ -119,13 +122,9 @@ To address this, a machine learning (ML) model capable of analyzing an image of 
 To do this, the following were identified:
 
 - Task Type: Supervised Learning
-  
 - Problem Type: Binary classification (Healthy vs. Infected)
-  
 - Model Type: Convolutional Neural Network (CNN)
-  
 - Input: Image of a single cherry leaf
-
 - Output:
   - A predicted label (Healthy or Infected)
   - Associated probability score
@@ -228,18 +227,9 @@ Page 5: Model performance
 
 [Back to top](#table-of-contents)
 
-## Unfixed Bugs
-
-src/Predictive analysis:
-def load_model_and_predict(my_image, version):
-    model = load_model(f"outputs/v2/powdery_mildew_model.h5")
-model = load_model(f"outputs/{version}/powdery_mildew_model.h5")
-
-[Back to top](#table-of-contents)
-
 ## Deployment
 
-- The App live link is: `https://YOUR_APP_NAME.herokuapp.com/`
+- The App live link is: `https://mildew-detector-p5-ci-c8b938269593.herokuapp.com/`
 - Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
 - The project was deployed to Heroku using the following steps.
 
@@ -255,37 +245,137 @@ model = load_model(f"outputs/{version}/powdery_mildew_model.h5")
 ## Main Data Analysis and Machine Learning Libraries
 
 The main libraries used were:
-numpy 1.26.1 - used for converting to array
-pandas 2.1.1 - used for creating/saving as dataframe
-matplotlib 3.8.0 - used for plotting distribution of the sets
-seaborn 0.13.2 - used for making statistical graphs
-plotly 5.17.0 - used for plotting model learning curve
-Pillow 10.0.1 - used to adjust images
-streamlit 1.40.2 - used for creating the dashboards
-joblib 1.4.2 - used for running tasks in parallel
-scikit-learn 1.3.1 - used for model evaluation
-tensorflow-cpu 2.16.1 - used for model creation
-keras 3.0.0 - used for setting up model hyperparameters
+
+- numpy 1.26.1 - used for converting to array
+- pandas 2.1.1 - used for creating/saving as dataframe
+- matplotlib 3.8.0 - used for plotting distribution of the sets
+- seaborn 0.13.2 - used for making statistical graphs
+- plotly 5.17.0 - used for plotting model learning curve
+- Pillow 10.0.1 - used to adjust images
+- streamlit 1.40.2 - used for creating the dashboards
+- joblib 1.4.2 - used for running tasks in parallel
+- scikit-learn 1.3.1 - used for model evaluation
+- tensorflow-cpu 2.16.1 - used for model creation
+- keras 3.0.0 - used for setting up model hyperparameters
 
 [Back to top](#table-of-contents)
 
 ## Other technologies used
 
-Heroku: Project deployment
-Git/GitHub: Version control
-Gitpod: IDE used for project development
-Jupyter Notebook: develop ML model
-Kaggle: Download dataset
-
-Am I responsive - used to produce screenshot of the project.
+- Heroku: Project deployment
+- Git/GitHub: Version control
+- Gitpod: IDE used for project development
+- Jupyter Notebook: develop ML model
+- Kaggle: Download dataset
+- techsini: Generate a multimockup image of the project
 
 [Back to top](#table-of-contents)
 
 ## Issues
 
+Deploying on Heroku: During deployment, the application exceeded the size limit and couldn’t be posted. Although several items were added to the .slugignore file, the size remained too large. To reduce it further, older versions of matplotlib & plotly were used and the Python version was downgraded from 3.12 to 3.9.
+
+`Compiled slug size: 570.1M is too large (max is 500M).`
+(Added inputs to slugignore)
+
+`Compiled slug size: 517.7M is too large (max is 500M).`
+(Addedjupyter notebooks to slugignore)
+
+`Compiled slug size: 512.3M is too large (max is 500M).`
+(python 3.12 → 3.12, matplotlib & plotly versions decreased, added validation images inputs back to allow image montage to run)
+
+`Done: 499.8M`
+
+`!     Warning: Your slug size (499 MB) exceeds our soft limit (300 MB) which may affect boot time.`
+
 [Back to top](#table-of-contents)
 
 ## Testing
+
+### Manual Testing
+
+**Requirement 1** - conduct a study to visually compare and distinguish between healthy and infected cherry leaves.
+
+- As a data analyst, I can load a saved dataset so that I can analyse the data to gain insights on what further tasks may be required.
+
+- As a data scientist, I can visualise the dataset so that I can differentiate a healthy cherry leaf versus one that contains powdery mildew (Business Requirement 1).
+
+- As a non-technical user, I can view the project findings so that I can receive more detailed information on the analysis done.
+
+- As a non-technical user, I can view the project hypotheses and validations to determine what the project was trying to achieve and whether it was successful.
+
+| TEST                   | ACTION                                | EXPECTATION                              | RESULT    |
+|------------------------|---------------------------------------|------------------------------------------|-----------|
+| **Navbar** | Select Visual Studies page button | Visual Studies page opens | **Success** |
+| **Average and Variability Image Differences Button** | Click button | Display average & variability image for healthy & infected leaves | **Success**|
+| **Average Healthy & Infected Cherry Leaves Differences** | Click button | Display average images & difference image for average healthy & infect leaves | **Success**|
+| **Image Montage Button** | Click button | Display dropdown for montage creation | **Success**|
+| **Healthy leaves dropdown option** | Select & click button to create montage | See montage of healthy leaves| **Success**|
+| **Infected leaves dropdown option** | Select & click button to create montage | See montage of infected leaves| **Success**|
+
+**Requirement 2** - predicting if a cherry leaf is healthy or infected with powdery mildew based on an image input.This is done via a dashboard that would allow the client to upload images of the leaves and an accurate reading would inform them if the leaves are infected or healthy.
+
+- As a data engineer, I can create an ML model to create a predictor if a cherry leaf is diseased or healthy.
+
+- As a non-technical user, I can upload an image of a leaf into the model and receive a prediction if it contains powdery mildew or not (Business requirements 2).
+
+| TEST                   | ACTION                                | EXPECTATION                              | RESULT    |
+|------------------------|---------------------------------------|------------------------------------------|-----------|
+| **Navbar** | Select Mildew Detector page button |Mildew Detector page opens | **Success**|
+| **Kaggle link** | Click on link |Kaggle page for dataset opens | **Success**|
+| **Box for uploading images** | Drag & drop leaf image into box | See report displaying analysis of the image | **Success**|
+| **Box for uploading images** | Use browse files button | File explorer opens to enable selection | **Success**|
+| **Box for uploading images** | Upload image from file explorer | See report displaying analysis of the image | **Success**|
+| **Box for uploading images** | Repeat prior two items for multiple images | See report displaying analysis of all the images| **Success**|
+| **Image analysis report** | Click button to download csv report of analysis | Report is downloaded containing the results shown on dashboard| **Success**|
+
+## Validation
+
+### PEP8 Validation
+
+[CI Python Linter](https://pep8ci.herokuapp.com) was used to test code for PEP8 compliance.
+
+
+<hr><summary>app_pages</summary><hr>
+
+<details><summary>multipage.py</summary>
+<img src="docs/pep8/pep8_about_admin.png">
+</details>
+
+<details><summary>p1_project_summary.py</summary>
+<img src="docs/pep8/pep8_about_admin.png">
+</details>
+
+<details><summary>p2_visual_studies.py</summary>
+<img src="docs/pep8/pep8_about_admin.png">
+</details>
+
+<details><summary>p3_mildew_detector.py</summary>
+<img src="docs/pep8/pep8_about_admin.png">
+</details>
+
+<details><summary>p4_project_hypothesis.py</summary>
+<img src="docs/pep8/pep8_about_admin.png">
+</details>
+
+<details><summary>p5_model_performance.py</summary>
+<img src="docs/pep8/pep8_about_admin.png">
+</details>
+
+
+<hr><summary>src</summary><hr>
+
+<details><summary>data_management.py</summary>
+<img src="docs/pep8/pep8_blog_admin.png">
+</details>
+
+<details><summary>evaluate_clf.py</summary>
+<img src="docs/pep8/pep8_blog_models.png">
+</details>
+
+<details><summary>predictive_analysis.py</summary>
+<img src="docs/pep8/pep8_blog_urls.png">
+</details>
 
 [Back to top](#table-of-contents)
 
