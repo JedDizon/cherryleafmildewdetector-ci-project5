@@ -12,8 +12,9 @@ def p4_project_hypothesis_body():
 
     st.success(
         f"**Validation 1**\n\n"
-        f"Model performance shows the model predicting with a 99.76% degree of"
-        f"accuracy."
+        f"The **Performance on Test Set** table on Model Performance page show "
+        f"the model predicting with a 99.76% degree of accuracy. "
+        f"This hypothesis can be considered validated."
     )
 
     st.write("---")
@@ -26,14 +27,10 @@ def p4_project_hypothesis_body():
 
     st.success(
         f"**Validation 2**\n\n"
-        f"Using smaller image sizes reduces computational cost "
-        f"while preserving key features. The original dataset "
-        f"images are 256x256 pixels, but training with this resolution "
-        f"typically results in a model larger than 100MB—exceeding "
-        f"GitHub’s standard file size limit.\n\n"
-        f"Git LFS was avoided by using smaller input dimensions (160x160). "
-        f"This approach maintains performance while keeping the model under "
-        f"the 100MB threshold."
+        f"The original dataset images are 256x256 pixels. By using smaller "
+        f"input dimensions (160x160), the Git LFS limit was avoided "
+        f"while the model was still able to maintain an accuracy of 99.76%."
+        f" This hypothesis can be considered validated."
     )
 
     st.write("---")
@@ -46,10 +43,12 @@ def p4_project_hypothesis_body():
 
     st.success(
         f"**Validation 3**\n\n"
-        f"Model performance shows differences with can be observed "
-        f"in the form of visible white spot/streak patterns.\n"
-        f"Average images also reveal a color difference where infected leaves "
-        f"appear as a lighter shade of green compared to healthy ones."
+        f"The **Average and Variability Image Differences** and **Average "
+        f"Healthy & Infected Cherry Leaves Differences** images on the Visual "
+        f"Studies page show the differences in the form ofvisible white spot/"
+        f"streak patterns. Average images also reveal a color difference "
+        f"where infected leaves appear as a lighter shade of green compared "
+        f"to healthy ones. This hypothesis can be considered validated."
     )
 
     st.write("---")
@@ -63,5 +62,7 @@ def p4_project_hypothesis_body():
     st.success(
         f"**Validation 4**\n\n"
         f"The mildew detector application allows for a near instantaneous "
-        f"prediction of the precense of mildew on a cherry leaf."
+        f"prediction of the presence of mildew on a cherry leaf vs the "
+        f"problem statement of 30 minutes per tree for inspection. "
+        f"This hypothesis can be considered validated. "
     )
